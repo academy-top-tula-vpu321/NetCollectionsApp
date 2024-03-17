@@ -1,17 +1,24 @@
-﻿using System.Collections;
+﻿using NetCollectionsApp;
+using System.Collections;
+using System.Collections.Generic;
 
-ArrayList arrayList = new ArrayList();
-Random random = new Random();
 
-int size = 10;
+Random random = new();
+List<int> nums = new();
 
-for (int i = 0; i < size; i++)
-    arrayList.Add(random.Next(99));
+for (int i = 0; i < 10; i++)
+{
+    nums.Add(random.Next(1, 99));
+    Console.Write($"{nums[nums.Count - 1]} ");
+}
+Console.WriteLine();
 
-//arrayList[3] = 656.8787;
-//arrayList[5] = "Hello world";
-//arrayList[7] = false;
+Index index = 2;
+Console.WriteLine(nums[index]);
+index = ^2;
+Console.WriteLine(nums[index]);
 
-foreach(var item in arrayList)
-    Console.Write($"{item} ");
+Range range = 2..;
+foreach(int i in nums[^7..^3])
+    Console.Write($"{i} ");
 Console.WriteLine();
